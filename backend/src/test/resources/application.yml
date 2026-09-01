@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: test
+  datasource:
+    url: jdbc:h2:mem:forcreators_test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  mail:
+    host: localhost
+    port: 25
+app:
+  jwt:
+    secret: test-secret-for-creators-must-be-long-enough
+    expiration-ms: 3600000
+  cors:
+    allowed-origins: http://localhost:5173
+  storage:
+    dir: ./target/test-uploads
+  admin:
+    notify-email: test@forcreators.in
+  razorpay:
+    key-id:
+    key-secret:

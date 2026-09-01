@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "For Creators API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List products",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/products?type=TRADITIONAL"
+      }
+    },
+    {
+      "name": "Login admin",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@forcreators.in\",\"password\":\"Admin@12345\"}"
+        },
+        "url": "{{baseUrl}}/api/auth/login"
+      }
+    },
+    {
+      "name": "Guest checkout",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"items\":[{\"productId\":1,\"quantity\":1}],\"shippingAddress\":\"Bengaluru\",\"guestEmail\":\"guest@example.com\",\"guestName\":\"Guest\"}"
+        },
+        "url": "{{baseUrl}}/api/checkout"
+      }
+    }
+  ],
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }]
+}
