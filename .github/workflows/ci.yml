@@ -16,6 +16,7 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: maven
+      - run: chmod +x ./mvnw
       - run: ./mvnw -q test
   frontend:
     runs-on: ubuntu-latest
